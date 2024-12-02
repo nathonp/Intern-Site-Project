@@ -2,15 +2,6 @@
 session_start();
 require('db.php');
 include 'header.php';
-
-// Check if a user is logged in or not
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-    // Potentially more code here that does something with $username
-} else {
-    // Display welcome message for guests
-    echo "<center><h3>Welcome to my Awesome Website!</h3></center>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +14,7 @@ if (isset($_SESSION['username'])) {
 </head>
 <body>
 
-<div class="container" style="margin-top: 50px;">
+<div class="container">
     <div class="hero-image" style="position: relative; height: 70vh;">
         <img src="/pexels-fauxels-3183150.jpg" alt="Descriptive Alt Text" style="
             width: 100%;
@@ -53,17 +44,22 @@ if (isset($_SESSION['username'])) {
             <p style="font-size: 24px; font-weight: 400; line-height: 1.5;">Welcome to the McKendree InternHub.</p>
         </div>
     </div>
-    <div style="text-align: center; padding: 20px;">
-        <?php if (!isset($_SESSION['username'])): ?>
-            New user? Please <a href="login.php">Login</a> or <a href="register.php">Register</a>
-        <?php endif; ?>
-    </div>
+    <?php if (!isset($_SESSION['username'])): ?>
+        <div style="text-align: center; padding: 20px;">
+            
+                New user? Please <a href="login.php">Login</a> or <a href="register.php">Register</a>
+            
+        </div>
+    <?php endif; ?>
 </div>
 
 <section class="container">
     <div>
         <div>
-            <p style="width: 100%; left:50%; text-align: center; padding: 10px;">A website created for McKendree students looking for local internship opportunities pertaining to their major, minor, or career choice.</p>
+            <p style="width: 100%; left:50%; text-align: center; padding-top: 20px;">A website created for McKendree students looking for local internship opportunities pertaining to their major, minor, or career choice.</p>
+            <p style="width: 100%; left:50%; text-align: center; padding: 1px;">
+                <a href="listings.php" class="btn btn-info"><b>See Current Listings</b><br></a>
+            </p>
         </div>
     </div>
 </section>
@@ -71,11 +67,6 @@ if (isset($_SESSION['username'])) {
 <footer class="container">
     <?php include 'footer.php'; ?>
 </footer>
-
-<div style="text-align: center; padding: 20px;">
-    <a href="admin_add.php">Add Listing <br></a>
-    <a href="listings.php">Listings Page</a></div>
-</div>
 
 </body>
 </html>

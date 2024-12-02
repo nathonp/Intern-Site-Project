@@ -16,10 +16,16 @@ session_start();
     <body>
         <section style="margin-top: 10px; text-align: center">
             <div class="form">
-            <p>Dashboard</p>
-            <p>This is your profile page.</p>
-            <a href="index.php">Home</a>
-            <a href="logout.php">Logout</a>
+                <h2><b>**Admin Dashboard**</b></h2>
+                <p><i>Please see the below links to make changes to the database.</i></p>
+
+                <a href="admin_add.php">Add One Listing <br></a>
+                <a href="import_listings.php">Import Multiple Listings<br><br></a>
+
+                <a href="listings.php">See the Listings Page<br><br></a>
+                
+                <a href="process_remove.php">Remove Listings<br></a>
+                <a href="edit_listings.php">Edit Listings<br><br><br></a>
             </div>
         </section>
     </body>

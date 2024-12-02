@@ -79,7 +79,6 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
       <?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
         <h2 class="form-signin-heading">Please Register using your Mckendree Email</h2>
         <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">@</span>
           <input type="text" name="username" class="form-control" placeholder="Username" required>
         </div>
         <label for="inputEmail" class="sr-only">Email address</label>

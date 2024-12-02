@@ -9,6 +9,7 @@ if (isset($_POST['verification_code'])) {
     // Compare the entered code with the one stored in the session
     if ($entered_code == $_SESSION['verification_code']) {
         // If they match, insert the user into the database
+        $role = 'student';
         $username = $_SESSION['username'];
         $email = $_SESSION['email'];
         $password = $_SESSION['password'];  // Consider hashing the password before storing it for security reasons
